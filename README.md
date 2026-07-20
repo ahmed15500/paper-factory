@@ -1,48 +1,17 @@
-# The Brothers Factory Website | موقع مصنع الأخوه
+# The Brothers Factory | مصنع الأخوه
 
-A responsive bilingual website for **The Brothers Factory — مصنع الأخوه**, a paper cutting and converting factory.
+Static bilingual website for The Brothers Factory, specializing in paper cutting and conversion.
 
-## Features
+## Cloudflare deployment
 
-- Arabic-first responsive design with full English translation
-- Professional paper-industry visual identity
-- Services and work-process sections
-- Quote request form with dimensions and quantity fields
-- WhatsApp integration ready to activate
-- Mobile navigation, accessibility support and reduced-motion support
-- No framework or build process required
+The project is configured for Cloudflare Workers static assets.
 
-## Run locally
+- Deploy command: `npx wrangler deploy`
+- Static assets directory: `public`
+- Configuration file: `wrangler.jsonc`
 
-Open `index.html` directly in a browser, or run:
+Every push to the connected production branch triggers a new Cloudflare deployment.
 
-```bash
-python -m http.server 8000
-```
+## Website imagery
 
-Then visit `http://localhost:8000`.
-
-## Add the factory contact details
-
-Open `script.js` and edit the object at the top:
-
-```js
-const FACTORY_CONTACT = {
-  whatsapp: "", // country code + number, without + or spaces
-  phone: "",
-  email: "",
-  addressAr: "",
-  addressEn: ""
-};
-```
-
-Example Egyptian WhatsApp format: `201001234567`.
-
-After a WhatsApp number is added, the quote form opens WhatsApp with a formatted customer request. Until then, the website copies the request summary without transmitting customer data.
-
-## Publish with GitHub Pages
-
-1. Upload all files to the repository root.
-2. Open repository **Settings → Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Choose the `main` branch and `/ (root)`, then save.
+Optimized WebP images are stored in `public/assets/images` and integrated across the website.
